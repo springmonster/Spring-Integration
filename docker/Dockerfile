@@ -1,0 +1,16 @@
+FROM java:8
+
+COPY target/*.jar /app.jar
+
+CMD ["--server.port=8080"]
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+# 通过docker inspect 容器id，查看的信息是
+#  "Args": [
+#            "-jar",
+#            "/app.jar",
+#            "--server.port=8080"
+#        ],
