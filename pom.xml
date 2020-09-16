@@ -13,13 +13,15 @@
     <modules>
         <module>elasticsearch</module>
         <module>docker</module>
+        <module>spring-cloud-gateway</module>
+        <module>spring-cloud-test</module>
     </modules>
 
     <properties>
         <!--        java version-->
         <java.version>1.8</java.version>
         <!--        Spring version-->
-        <revision>2.3.1.RELEASE</revision>
+        <revision>2.1.7.RELEASE</revision>
     </properties>
 
     <parent>
@@ -37,17 +39,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
                 <version>${revision}</version>
+            </dependency> <!--        web-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <!--    定义子类直接继承的依赖包-->
     <dependencies>
-        <!--        web-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!--        devtools-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
